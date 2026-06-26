@@ -69,56 +69,56 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-9 flex flex-col gap-6 h-full">
+            <div class="lg:col-span-9 flex flex-col gap-6 h-full min-h-0">
+    
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 h-1/3 min-h-0 flex flex-col overflow-hidden">
+                <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 flex justify-between items-center shrink-0">
+                    <h2 class="text-sm font-semibold text-slate-700">Data Viewer</h2>
+                    <span class="text-xs bg-slate-200 text-slate-600 px-2 py-1 rounded">Read-Only</span>
+                </div>
                 
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 h-1/3 flex flex-col overflow-hidden">
-                    <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
-                        <h2 class="text-sm font-semibold text-slate-700">Data Viewer</h2>
-                        <span class="text-xs bg-slate-200 text-slate-600 px-2 py-1 rounded">Read-Only</span>
+                <div id="tableContainer" class="flex-grow overflow-auto custom-scroll p-0 relative">
+                    <div id="emptyTableState" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                        <svg class="w-8 h-8 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        <p class="text-sm">Upload a spreadsheet to preview data here.</p>
                     </div>
-                    
-                    <div id="tableContainer" class="flex-grow overflow-auto custom-scroll p-0 relative">
-                        <div id="emptyTableState" class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 p-4 text-center">
-                            <svg class="w-8 h-8 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                            <p class="text-sm">Upload a spreadsheet to preview data here.</p>
-                        </div>
-                        <table id="dataTable" class="w-full text-sm text-left hidden">
-                            <thead class="text-xs text-slate-700 uppercase bg-slate-100 sticky top-0" id="dataHead"></thead>
-                            <tbody class="text-slate-600" id="dataBody"></tbody>
-                        </table>
-                    </div>
+                    <table id="dataTable" class="w-full text-sm text-left hidden">
+                        <thead class="text-xs text-slate-700 uppercase bg-slate-100 sticky top-0 z-10" id="dataHead"></thead>
+                        <tbody class="text-slate-600" id="dataBody"></tbody>
+                    </table>
                 </div>
-
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 h-2/3 flex flex-col overflow-hidden">
-                    <div class="px-4 py-3 border-b border-slate-200 bg-slate-50">
-                        <h2 class="text-sm font-semibold text-slate-700">Financial AI Assistant</h2>
-                    </div>
-                    
-                    <div id="chatBox" class="flex-grow overflow-y-auto custom-scroll p-4 space-y-4 bg-slate-50/50">
-                        <div class="flex items-start">
-                            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shadow-sm shrink-0">AI</div>
-                            <div class="ml-3 bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-slate-700 max-w-[85%]">
-                                Hello! Once you upload your spreadsheet and provide your API key, you can ask me questions like:
-                                <ul class="list-disc ml-4 mt-2 text-slate-500">
-                                    <li>"What is our total spend on travel?"</li>
-                                    <li>"Are there any single transactions over $5,000?"</li>
-                                    <li>"Summarize expenditures by category."</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-3 bg-white border-t border-slate-200">
-                        <div class="flex items-center space-x-2">
-                            <input type="text" id="chatInput" placeholder="Ask a question about your data..." disabled class="flex-grow px-4 py-2 bg-slate-100 border border-slate-200 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm transition disabled:opacity-50 disabled:cursor-not-allowed" onkeypress="handleEnter(event)">
-                            <button id="sendBtn" onclick="sendMessage()" disabled class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center transition shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
-                                <svg class="w-4 h-4 translate-x-[1px] translate-y-[1px]" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 h-2/3 min-h-0 flex flex-col overflow-hidden">
+                <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 shrink-0">
+                    <h2 class="text-sm font-semibold text-slate-700">Financial AI Assistant</h2>
+                </div>
+                
+                <div id="chatBox" class="flex-grow overflow-y-auto custom-scroll p-4 space-y-4 bg-slate-50/50">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shadow-sm shrink-0">AI</div>
+                        <div class="ml-3 bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-slate-700 max-w-[85%]">
+                            Hello! Once you upload your spreadsheet and provide your API key, you can ask me questions like:
+                            <ul class="list-disc ml-4 mt-2 text-slate-500">
+                                <li>"What is our total spend on travel?"</li>
+                                <li>"Are there any single transactions over $5,000?"</li>
+                                <li>"Summarize expenditures by category."</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="p-3 bg-white border-t border-slate-200 shrink-0">
+                    <div class="flex items-center space-x-2">
+                        <input type="text" id="chatInput" placeholder="Ask a question about your data..." disabled class="flex-grow px-4 py-2 bg-slate-100 border border-slate-200 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm transition disabled:opacity-50 disabled:cursor-not-allowed" onkeypress="handleEnter(event)">
+                        <button id="sendBtn" onclick="sendMessage()" disabled class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center transition shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
+                            <svg class="w-4 h-4 translate-x-[1px] translate-y-[1px]" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
         </div>
     </div>
 
